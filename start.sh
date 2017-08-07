@@ -114,12 +114,23 @@ exit 0
 
 #Create controller
 
-#qemu-img create -f raw controller.img 64G
+#Controller
+virt-install --connect qemu:///system --noautoconsole --filesystem ${PWD},shared_dir --import --name controller --ram 2048 --vcpus 2 --disk controller.img,size=68 --boot cdrom,hd,network  --network network=network_admin,mac="08:00:28:af:10:20" --network network=network_public,mac="08:00:28:af:10:21" --network network=network_private,mac="08:00:28:af:10:22" --network network=network_storage,mac="08:00:28:af:10:23" --network network=network_mgmt,mac="08:00:28:af:10:24" 
 
-virt-install --connect qemu:///system --noautoconsole --filesystem ${PWD},shared_dir --import --name controller --ram 2048 --vcpus 2 --disk controller.img,size=75 --boot cdrom,hd,network  --network network=network_admin,mac="08:00:28:af:10:20" --network network=network_public,mac="08:00:28:af:10:21" --network network=network_private,mac="08:00:28:af:10:22" --network network=network_storage,mac="08:00:28:af:10:23" --network network=network_mgmt,mac="08:00:28:af:10:24" 
+#Compute1
+virt-install --connect qemu:///system --noautoconsole --filesystem ${PWD},shared_dir --import --name compute1 --ram 2048 --vcpus 2 --disk compute1.img,size=25 --boot cdrom,hd,network  --network network=network_admin,mac="08:00:28:af:10:30" --network network=network_public,mac="08:00:28:af:10:31" --network network=network_private,mac="08:00:28:af:10:32" --network network=network_storage,mac="08:00:28:af:10:33" --network network=network_mgmt,mac="08:00:28:af:10:34" 
 
-virt-install --connect qemu:///system --noautoconsole --filesystem ${PWD},shared_dir --import --name compute1 --ram 2048 --vcpus 2 --disk compute1.img,size=30 --boot cdrom,hd,network  --network network=network_admin,mac="08:00:28:af:10:30" --network network=network_public,mac="08:00:28:af:10:31" --network network=network_private,mac="08:00:28:af:10:32" --network network=network_storage,mac="08:00:28:af:10:33" --network network=network_mgmt,mac="08:00:28:af:10:34" 
+#Compute2
+virt-install --connect qemu:///system --noautoconsole --filesystem ${PWD},shared_dir --import --name compute2 --ram 2048 --vcpus 2 --disk compute2.img,size=25 --boot cdrom,hd,network  --network network=network_admin,mac="08:00:28:af:10:40" --network network=network_public,mac="08:00:28:af:10:41" --network network=network_private,mac="08:00:28:af:10:42" --network network=network_storage,mac="08:00:28:af:10:43" --network network=network_mgmt,mac="08:00:28:af:10:44" 
 
-virt-install --connect qemu:///system --noautoconsole --filesystem ${PWD},shared_dir --import --name compute2 --ram 2048 --vcpus 2 --disk compute2.img,size=30 --boot cdrom,hd,network  --network network=network_admin,mac="08:00:28:af:10:40" --network network=network_public,mac="08:00:28:af:10:41" --network network=network_private,mac="08:00:28:af:10:42" --network network=network_storage,mac="08:00:28:af:10:43" --network network=network_mgmt,mac="08:00:28:af:10:44" 
+
+#Contrail nodes
+
+#Controller
+virt-install --connect qemu:///system --noautoconsole --filesystem ${PWD},shared_dir --import --name contrail_controller --ram 2048 --vcpus 2 --disk contrail_controller.img,size=320 --boot cdrom,hd,network  --network network=network_admin,mac="08:00:28:af:10:50" --network network=network_public,mac="08:00:28:af:10:51" --network network=network_private,mac="08:00:28:af:10:52" --network network=network_storage,mac="08:00:28:af:10:53" --network network=network_mgmt,mac="08:00:28:af:10:54" 
+
+#Analytics
+virt-install --connect qemu:///system --noautoconsole --filesystem ${PWD},shared_dir --import --name analytics --ram 2048 --vcpus 2 --disk analytics.img,size=321 --boot cdrom,hd,network  --network network=network_admin,mac="08:00:28:af:10:60" --network network=network_public,mac="08:00:28:af:10:61" --network network=network_private,mac="08:00:28:af:10:62" --network network=network_storage,mac="08:00:28:af:10:63" --network network=network_mgmt,mac="08:00:28:af:10:64" 
+
 
 
