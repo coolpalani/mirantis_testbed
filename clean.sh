@@ -1,7 +1,7 @@
 #!/bin/bash
 
-virsh destroy mirantis
-virsh undefine mirantis
+virsh destroy fuel
+virsh undefine fuel
 
 virsh destroy controller
 virsh undefine controller
@@ -22,8 +22,8 @@ virsh net-destroy network_storage
 virsh net-destroy network_mgmt
 
 
-rm -f mirantis.img
-rm -f mirantis.iso
+rm -f fuel.img
+rm -f fuel.iso
 
 rm -f network_admin
 rm -f network_public
