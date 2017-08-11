@@ -49,7 +49,7 @@ cat >network_public <<EOF
   </forward>
   <bridge name='virbr_public' stp='on' delay='0'/>
   <mac address='52:54:00:b6:52:11'/>
-  <ip address='172.16.0.1' netmask='255.255.255.0'>
+  <ip address='10.20.1.1' netmask='255.255.255.0'>
   </ip>
 </network>
 EOF
@@ -64,7 +64,7 @@ cat >network_private <<EOF
   </forward>
   <bridge name='virbr_private' stp='on' delay='0'/>
   <mac address='52:54:00:b6:52:12'/>
-  <ip address='192.168.2.1' netmask='255.255.255.0'>
+  <ip address='10.20.2.1' netmask='255.255.255.0'>
   </ip>
 </network>
 EOF
@@ -79,7 +79,7 @@ cat >network_storage <<EOF
   </forward>
   <bridge name='virbr_storage' stp='on' delay='0'/>
   <mac address='52:54:00:b6:52:13'/>
-  <ip address='192.168.1.1' netmask='255.255.255.0'>
+  <ip address='10.20.3.1' netmask='255.255.255.0'>
   </ip>
 </network>
 EOF
@@ -94,7 +94,7 @@ cat >network_mgmt <<EOF
   </forward>
   <bridge name='virbr_mgmt' stp='on' delay='0'/>
   <mac address='52:54:00:b6:52:14'/>
-  <ip address='192.168.0.1' netmask='255.255.255.0'>
+  <ip address='10.20.4.1' netmask='255.255.255.0'>
   </ip>
 </network>
 EOF
